@@ -25,11 +25,12 @@ public class MachinePulseDaoImpl implements MachinePulseDao{
 		RestTemplate restTemplate = new RestTemplate();
 		ObjectMapper objMpr = new ObjectMapper();
 		
-		SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-
+		
+		
+		/*SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
 	    Proxy proxy= new Proxy(Type.HTTP, new InetSocketAddress("cis-india-pitc-bangalorez.proxy.corporate.ge.com", 80));
 	    requestFactory.setProxy(proxy);
-	    restTemplate.setRequestFactory(requestFactory);
+	    restTemplate.setRequestFactory(requestFactory);*/
 		
 	    ResponseEntity<String> soaData =  restTemplate.getForEntity(env.getProperty("test_url"),String.class);
 	    String output = soaData.getBody();
